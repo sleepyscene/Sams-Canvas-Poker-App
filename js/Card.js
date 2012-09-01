@@ -5,6 +5,9 @@
  */
 function Card(inNumber, inSuit){
 
+	if(inNumber > 13)
+		throw 'Cards number is out of range.'
+
 	this.suit = inSuit;
 	this.number = inNumber;
 

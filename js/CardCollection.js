@@ -19,11 +19,11 @@ function CardCollection(inCards){
 		throw 'Cards added to card collection are invalid.';
 	}
 
+	// Sort the cards that come in.
+	inCards.sort(CardCollection.prototype.compareCards);
+	
 	// Add the cards from the constructure to this object.
 	this.cards = inCards;
-
-	// Sort the cards that come in.
-	this.cards.sort(CardCollection.prototype.compareCards);
 }
 
 
@@ -39,6 +39,9 @@ CardCollection.prototype.compareCards = function(firstCard, secondCard){
 	if(firstCard.number == 1)
 		return 1;
 
+	if(secondCard.number == 1)
+		return -1;
+
 	// Equal cards maintain a stable array.
 	if(firstCard.number == secondCard.number)
 		return 0;
@@ -47,6 +50,7 @@ CardCollection.prototype.compareCards = function(firstCard, secondCard){
 		? -1
 		: 1;
 }
+
 
 /**
  * Add a card to our card collection
@@ -62,4 +66,13 @@ CardCollection.prototype.addCard = function(card){
 
 	// Keep the cards in sorted order.
 	this.cards.sort(CardCollection.prototype.compareCards);
+}
+
+
+/**
+ * Get the total number of cards in the collection.
+ * @return {Int} The total number of cards.
+ */
+CardCollection.prototype.totalCards = function(){
+	return this.cards.length;
 }

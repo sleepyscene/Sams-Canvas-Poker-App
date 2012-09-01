@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Card Tester</title>
+
+		<script language="JavaScript" src="../jsUnit/app/jsUnitCore.js"></script>
+
+		<script type="text/javascript" src="../js/Suits.js"></script>
+		<script type="text/javascript" src="../js/Card.js"></script>
+		<script type="text/javascript" src="../js/Hands.js"></script>
+		<script type="text/javascript" src="../js/CardCollection.js"></script>
+
+		<script language="JavaScript">
+
+			function setUp(){
+
+			}
+
+			function testCardCollectionConstructor(){
+
+				var collection = new CardCollection([]);
+
+				assert(
+					'Card collection constructor broken.',
+					collection.totalCards() == 0
+				);
+				
+				var collection = new CardCollection([
+					new Card(8, Suits.spades)
+				]);
+
+				assert(
+					'Card collection constructor broken.',
+					collection.totalCards() == 1
+				);
+			}
+
+
+			function testCardCollectionAddCard(){
+
+				var collection = new CardCollection([]);
+				
+				collection.addCard(new Card(13, Suits.diamonds));
+
+				assert(
+					'Card collection addCard broken.',
+					collection.totalCards() == 1
+				);
+			}
+
+
+			function testCardCollectionSorting(){
+					
+				// Create a collection with a bunch of random cards.
+				var collection = new CardCollection([
+					new Card(13, Suits.diamonds),
+					new Card(8, Suits.diamonds),
+					new Card(12, Suits.diamonds),
+					new Card(4, Suits.diamonds),
+					new Card(1, Suits.diamonds),
+				]);
+
+
+				assert(
+					'Ace was not the last card in the collection',
+					collection.cards.pop().equals(new Card(1, Suits.diamonds))
+				);
+
+				assert(
+					'The first card was not the four.',
+					collection.cards[0].equals(new Card(4, Suits.diamonds))
+				);
+
+			}
+
+		</script>
+	
+	</head>
+
+	<body></body>
+
+</html>
