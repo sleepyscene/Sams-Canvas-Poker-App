@@ -6,63 +6,94 @@ var Hands = {
 
 	highCard : { 
 		value : 0,
-		humanName : 'High Card'
+		humanName : 'High Card',
+		handMatches : function(cardCollection){
+
+			// A hand can always make a high card.
+			return TRUE;
+		}
 	},
 	onePair : { 
 		value : 1,
-		humanName : 'One Pair'
+		humanName : 'One Pair',
+		handMatches : function(cardCollection){
+
+
+			
+		}
 	},
 	twoPair : { 
 		value : 2,
-		humanName : 'Two Pair'
+		humanName : 'Two Pair',
+		handMatches : function(cardCollection){
+
+			
+		}
 	},
 	trips : { 
 		value : 3,
-		humanName : 'Trips'
+		humanName : 'Trips',
+		handMatches : function(cardCollection){
+
+			
+		}
 	},
 	straight : { 
 		value : 4,
-		humanName : 'Straight'
+		humanName : 'Straight',
+		handMatches : function(cardCollection){
+
+			
+		}
 	},
 	flush : { 
 		value : 5,
-		humanName : 'Flush'
+		humanName : 'Flush',
+		handMatches : function(cardCollection){
+
+			
+		}
 	},
 	fullHouse : { 
 		value : 6,
-		humanName : 'Full House'
+		humanName : 'Full House',
+		handMatches : function(cardCollection){
+
+			
+		}
 	},
 	quads : { 
 		value : 7,
-		humanName : 'Quads'
+		humanName : 'Quads',
+		handMatches : function(cardCollection){
+
+			
+		}
 	},
 	staightFlush : { 
 		value : 8,
-		humanName : 'Straight Flush'
+		humanName : 'Straight Flush',
+		handMatches : function(cardCollection){
+
+			
+		}
 	},
 	broadwayFlush : { 
 		value : 9,
-		humanName : ' Broadway Flush'
-	}
+		humanName : ' Broadway Flush',
+		handMatches : function(cardCollection){
 
+			
+		}
+	}
 };
 
 
 /**
- * This function calculates if a group of cards matches a specific hands.
- * @param  {Array} cards An array of cards.
- * @return {Hand} A hand object that can be compared against other hands.
+ * The function calculates highest winning hand from a card collection.
+ * @param  {CardCollection} A card collection
+ * @return {Hand} The winning hand value.
  */
-Hands.cardsToHand = function(cards){
-
-}
-
-
-/**
- * The function calculates the winning hand from a group of hands.
- * @param  {Array} hands Some hands to compare against eachother.
- * @return {Hand} The winning hand.
- */
-Hands.winningHand = function(hands){
+Hands.highestMadeHand = function(cardCollection){
 
 }
