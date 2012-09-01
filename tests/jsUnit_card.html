@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Card Tester</title>
+
+		<script language="JavaScript" src="../jsUnit/app/jsUnitCore.js"></script>
+		<script language="JavaScript" src="../js/Card.js"></script>
+		<script language="JavaScript" src="../js/Suits.js"></script>
+		
+		<script language="JavaScript">
+
+			var queenOfSpades, tenOfHearts;
+
+			function setUp(){
+
+				queenOfSpades = new Card(12, Suits.spades);
+				tenOfHearts = new Card(10, Suits.hearts);
+
+			}
+
+			function testCardConstructor(){
+
+				assert(
+					'Suits mismatch on queen of spades',
+					queenOfSpades.suit == Suits.spades
+				);
+				
+				assert(
+					'Suits mismatch on queen of spades',
+					queenOfSpades.number == 12
+				);
+
+				assert(
+					'Suits mismatch on queen of spades',
+					tenOfHearts.suit == Suits.hearts
+				);
+				
+				assert(
+					'Suits mismatch on queen of spades',
+					tenOfHearts.number == 10
+				);
+
+			}
+
+			function testCardToString(){
+
+				assert(
+					'queen of spades to string failed',
+					queenOfSpades.toString() == 'Queen of Spades'
+				);
+
+				assert(
+					'queen of spades to string failed',
+					tenOfHearts.toString() == '10 of Hearts'
+				);
+			
+			}
+
+			function testCardsEquals(){
+
+				assert(
+					'queen of spades equals failed',
+					queenOfSpades.equals(
+						new Card(12, Suits.spades)
+					)
+				);
+
+				assert(
+					'queen of spades equals failed',
+					tenOfHearts.equals(
+						new Card(10, Suits.hearts)
+					)
+				);
+			}
+
+		</script>
+	
+	</head>
+
+	<body></body>
+
+</html>

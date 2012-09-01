@@ -18,9 +18,8 @@ function Card(inNumber, inSuit){
  */
 Card.prototype.equals = function(compareCard) {
 
-	return
-		this.suit == compareCard.suit
-		&& this.number = compareCard.number;
+	// Ensure the suit and number match.
+	return this.suit == compareCard.suit && this.number == compareCard.number;
 };
 
 
