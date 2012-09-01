@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Card Tester</title>
+
+		<script language="JavaScript" src="../jsUnit/app/jsUnitCore.js"></script>
+
+		<script language="JavaScript">
+
+			var pages = [
+				'card',
+				'suits'
+			];
+
+			function suite(){
+				
+				var tests = new JsUnitTestSuite();
+	
+				pages.forEach(function(page){
+					tests.addTestPage('../tests/jsUnit_' + page + '.html');
+				});
+
+				return tests;
+			}
+
+		</script>
+	
+	</head>
+
+	<body></body>
+
+</html>

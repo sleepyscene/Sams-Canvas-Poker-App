@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Card Tester</title>
+
+		<script language="JavaScript" src="../jsUnit/app/jsUnitCore.js"></script>
+
+		<script language="JavaScript" src="../js/Suits.js"></script>
+
+		<script language="JavaScript">
+
+			function testSuitsHumanName(){
+
+				assert(
+					'Suits broke',
+					Suits.humanName(Suits.diamonds) == 'Diamonds'
+				);
+
+				assert(
+					'Suits broke',
+					Suits.humanName(Suits.hearts) == 'Hearts'
+				);
+			}
+
+		</script>
+	
+	</head>
+
+	<body></body>
+
+</html>

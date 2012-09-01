@@ -3,9 +3,10 @@
 		<title>Card Tester</title>
 
 		<script language="JavaScript" src="../jsUnit/app/jsUnitCore.js"></script>
+
 		<script language="JavaScript" src="../js/Card.js"></script>
 		<script language="JavaScript" src="../js/Suits.js"></script>
-		
+
 		<script language="JavaScript">
 
 			var queenOfSpades, tenOfHearts;
@@ -25,17 +26,17 @@
 				);
 				
 				assert(
-					'Suits mismatch on queen of spades',
+					'Number mismatch on queen of spades',
 					queenOfSpades.number == 12
 				);
 
 				assert(
-					'Suits mismatch on queen of spades',
+					'Suits mismatch on ten of hearts',
 					tenOfHearts.suit == Suits.hearts
 				);
 				
 				assert(
-					'Suits mismatch on queen of spades',
+					'Number mismatch on ten of hearts',
 					tenOfHearts.number == 10
 				);
 
@@ -49,7 +50,7 @@
 				);
 
 				assert(
-					'queen of spades to string failed',
+					'ten of hearts to string failed',
 					tenOfHearts.toString() == '10 of Hearts'
 				);
 			
@@ -65,7 +66,7 @@
 				);
 
 				assert(
-					'queen of spades equals failed',
+					'ten of hearts equals failed',
 					tenOfHearts.equals(
 						new Card(10, Suits.hearts)
 					)
