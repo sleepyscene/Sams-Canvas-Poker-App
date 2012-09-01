@@ -50,21 +50,8 @@ Card.prototype.toString = function(){
 		default:
 			cardNumber = this.number;
 	}
-
-	switch(this.suit){
-		case Suits.diamonds:
-			cardSuit = 'Diamonds';
-			break;
-		case Suits.hearts:
-			cardSuit = 'Hearts';
-			break;
-		case Suits.spades:
-			cardSuit = 'Spades';
-			break;
-		case Suits.clubs:
-			cardSuit = 'Clubs';
-			break;
-	}
+	
+	cardSuit = Suits.humanName(this.suit);
 
 	return cardNumber + ' of ' + cardSuit;
 
